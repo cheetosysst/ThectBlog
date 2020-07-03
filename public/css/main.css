@@ -1,0 +1,14 @@
+/* Color */
+
+
+/* Navbar */
+.pre-nav {
+    height: 15px;
+}
+
+button.navbar-toggler {
+    border-top-left-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
