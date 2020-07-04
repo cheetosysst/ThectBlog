@@ -1,27 +1,25 @@
-var express = require('express');
-var app = express();
-var fs = require('fs');
+var express    = require('express');
+var app        = express();
+var router     = express.Router();
 
-import 'bootstrap';
+var Controller = require('./controller/controller.js')
 
-app.get('/', function (req, res) {
-	res.send('Hello World');
+router.use(function(req, res, next) {
+	console.log(req.method, req.url)
+	next()
 })
 
-app.get('/test', function(req, res){
-	fs.readFile(__dirname + '/template/index.html', 'utf8', function(err, html){
-		res.write(html)
-		res.end()
-	})
-})
+app.get('/', Controller)
 
 app.use('/static', express.static('public'));
 
 var server = app.listen(8081, function () {
 
-	var host = server.address().address
-	var port = server.address().port
+	// Data
+	var name    = require('./package.json').name
+	var version = require('./package.json').version
+	var host    = server.address().address
+	var port    = server.address().port
 
-	console.log("Open @ http://%s:%s", host, port)
-
+	console.log("%s %s Running on http://%s:%s", name, version, host, port);
 })
