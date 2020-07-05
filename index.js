@@ -4,7 +4,7 @@ var router     = express.Router();
 
 var Controller = require('./controller/controller.js')
 
-router.use(function(req, res, next) {
+app.use(function(req, res, next) {
 	console.log(req.method, req.url)
 	next()
 })
