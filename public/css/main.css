@@ -82,3 +82,8 @@ button.navbar-toggler {
 	outline: none !important;
 	box-shadow: none;
 }
+
+.dropdown-divider {
+	border-color: #6B6E70;
+	border-width: 2px;
+}
