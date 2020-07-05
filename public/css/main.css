@@ -60,3 +60,25 @@ button.navbar-toggler {
 	transition: 1s;
 	color: #86c232;
 }
+
+.search-effect-4 input[type=text]:focus:not([readonly]) {
+	transition: 0.3s;
+	border-width: 2px;
+	border: 1px solid #86c232;
+	background-color: #474b4f;
+	color: white;
+	outline: none;
+}
+
+.search-effect-3 input[type=text] {
+	transition: 1s;
+	border-width: 2px;
+	border: 1px solid #61892f;
+	background-color: #474b4f;
+	color: #6B6E70;
+	outline: none;
+}
+.remove-the-ugly-and-useless-outline:focus {
+	outline: none !important;
+	box-shadow: none;
+}
