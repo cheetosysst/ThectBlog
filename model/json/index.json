@@ -2,9 +2,9 @@
 	"title": "Thect 部落格",
 	"description": "Thect 的程式、教學、分享、和一些無關緊要的廢文。",
 	"email": "thect@protonmail.com",
-	"name": "Thect36",
-	"real-name": "張辰",
-	"self-description": "一個準大學生，自學 Programmer、Linux 愛好者、不會寫歌的編曲初學者、重度東方廚。",
+	"idName": "Thect36",
+	"realName": "張辰",
+	"selfDescription": "一個準大學生，自學 Programmer、Linux 愛好者、不會寫歌的編曲初學者、重度東方廚。",
 	"hooby": ["寫程式", "製作遊戲", "製作網頁", "研究火箭", "寫歌", "玩彈幕遊戲"],
-	"專長": ["Linux", "Python", "Java"]
+	"expertise": ["Linux", "Python", "Java"]
 }
