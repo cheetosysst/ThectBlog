@@ -18,9 +18,9 @@
 </head>
 
 <body>
-	<div class="d-flex pre-nav bg-secondary"></div>
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<a class="navbar-brand text-light" href="#"><%= title %></a>
+	<div class="d-flex pre-nav"></div>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<a class="navbar-brand nav-brand-animation" href="#"><%= title %></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -28,11 +28,28 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#"><strong>文章</strong></a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						文章
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">所有文章</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">教學</a>
+						<a class="dropdown-item" href="#">筆記</a>
+						<a class="dropdown-item" href="#">翻譯</a>
+						<a class="dropdown-item" href="#">科普</a>
+						<a class="dropdown-item" href="#">日常</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">標籤檢索</a>
+					</div>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#"><strong>聯絡</strong></a>
+				<li class="nav-item active">
+					<a class="nav-link" href="#"><strong>關於</strong></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#"><strong>FAQ</strong></a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">

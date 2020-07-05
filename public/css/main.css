@@ -7,28 +7,56 @@ body {
 /* Navbar */
 div.pre-nav {
 	height: 10px !important;
-	background-color: #222629;
+	background-color: #6B6E70;
 }
 
 nav.navbar {
 	background-color: #474b4f;
 }
 
-a.nav-brand:hover {
-	color: #6B6E70;
-}
-
-a.nav-link {
+.nav-brand-animation:hover {
+	transition: 0.3s;
 	color: #86c232 !important;
 }
 
+.nav-brand-animation {
+	transition: 1s;
+	color: white;
+}
+
 a.nav-link:hover {
+	transition: 0.3s;
 	color: #61892f !important;
 }
 
+a.nav-link {
+	transition: 1s;
+	color: #86c232 !important;
+}
+
 button.navbar-toggler {
-	border-top-left-radius: 20%;
-	border-bottom-left-radius: 20%;
-	border-top-right-radius: 20%;
-	border-bottom-right-radius: 20%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.dropdown-menu {
+	background-color: #474b4f;
+	border-width: 0;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 10px;
+}
+
+.dropdown-item:hover {
+	transition: 0.3s;
+	color: #86c232;
+	background-color: #222629;
+}
+
+.dropdown-item {
+	transition: 1s;
+	color: #86c232;
 }

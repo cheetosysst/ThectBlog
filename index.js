@@ -1,7 +1,5 @@
 var express    = require('express');
 var app        = express();
-var router     = express.Router();
-
 var Controller = require('./controller/controller.js')
 
 app.use(function(req, res, next) {
