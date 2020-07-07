@@ -7,7 +7,11 @@ app.use(function(req, res, next) {
 	next()
 })
 
-app.get('/', Controller)
+// app.get('/', Controller)
+
+app.use(function(req, res, next) {
+	Controller(req, res, next)
+})
 
 app.use('/static', express.static('public'));
 
