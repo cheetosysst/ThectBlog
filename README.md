@@ -18,7 +18,7 @@ npm start
 - [EJS](https://ejs.co/): 用來做網頁的 Render
 - [Bootstrap](https://getbootstrap.com/): 網頁框架。
     - 注意，我目前採用的是直接寫到 HTML(ejs)中，未來或許會使用 npm 版本，或是直接包在這個 Repo 當中。如果你希望可以改用本地的 Bootstrap 檔案，請將下載好的 Bootstrap 檔案放到 public 並修改 HTML(ejs) 中的路徑。
-- [ExpressJS](https://expressjs.com/zh-tw/)
+- [ExpressJS](https://expressjs.com/zh-tw/): 後臺架構
 
 ### Static 檔案
 `./public/` 當中的檔案可以透過 `example.com/static/*` 存取，建議將 css、js、 和開放下載資源的放在這裡。
