@@ -141,7 +141,7 @@ button.navbar-toggler {
 	width: auto;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.self-photo {
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
