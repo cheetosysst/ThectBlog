@@ -20,12 +20,17 @@ router.get('/post', function (req, res) {
 })
 
 router.get('/post/:SerialNumber', function (req, res) {
-	res.write("post SN placeholder")
+	view.postView(req, res, req.params.SerialNumber)
 	res.end()
 })
 
-router.get('/tag', function (req, res) {
-	res.write("tag placeholder")
+router.get('/tags', function (req, res) {
+	res.write("tags placeholder")
+	res.end()
+})
+
+router.get('/tags/:tag', function (req, res) {
+	res.write("tags placeholder")
 	res.end()
 })
 
