@@ -6,6 +6,7 @@
 // Library
 const fs = require('fs')
 const path = require("path")
+const { tmpdir } = require('os')
 
 // ======================================
 
@@ -21,9 +22,20 @@ exports.getPostContent = function (SerialNumber) {
 			if (err) {
 				reject(console.log("Reject fs.readFile()", err))
 			} else {
-				console.log("data in fs.readFile()", data)
 				resolve(data)
 			}
 		})
 	})
+}
+
+exports.getTitle = function(file) {
+	return file.split("\r\n")[0].split(" ")[1]
+}
+
+exports.getTags = function(file) {
+	temp = file.split("\r\n")[1].split("`")
+	for(var i=0; i < temp.length; i++) {
+		if (temp[i]===" " || temp[i]==="") temp.splice(i,1)
+	}
+	return temp
 }

@@ -113,13 +113,25 @@ button.navbar-toggler {
 	transform: scale(1.03);
 }
 
+.post-content {
+	transition: 1s;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	overflow: hidden;
+	background-color: #474b4f;
+	color: white;
+	text-decoration: none;
+}
+
 .card > a {
 	transition: 1s;;
 	text-decoration: none;
 	color: white;
 }
 
-.card > a:hover {
+.card:not(.no-animation) > a:hover {
 	transition: 0.3s;
 	color: #86c232;
 }
@@ -150,4 +162,14 @@ button.navbar-toggler {
 		height: auto;
 		width: 100%;
 	}
+}
+
+pre {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	color: white !important;
+	border: #61892f solid 3px;
+	padding: 5px;
 }

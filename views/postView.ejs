@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
 	<!-- Custom JS -->
 
-	<title><%= locals.title %></title>
+	<title><%= locals.postTitle %></title>
 </head>
 
 <body>
@@ -70,15 +70,12 @@
 	</div>
 
 	<div class="container mt-5 pt-5">
-		<div class="card self-intro border-0">
-			<a href="./about">
-				<div class="card-block py-4 px-4">
-					<p class="card-text">
-						<%- locals.mdContent %> 
-					</p>
-
-				</div>
-			</a>
+		<div class="card post-content no-animation border-0">
+			<div class="card-block py-4 px-4">
+				<p class="card-text">
+					<%- locals.mdContent %> 
+				</p>
+			</div>
 		</div>
 	</div>
 

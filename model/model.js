@@ -30,10 +30,14 @@ exports.index_data =  {
 // Return type: JSON
 // Description: Post content related JSON
 exports.post_view_data = async (SerialNumber) => {
-	var temp_json = index_data
-	var rawMarkdown = await markdown.getPostContent(SerialNumber)
-	var mdContent = md.render(rawMarkdown)
+	var temp_json          = index_data
+	var rawMarkdown        = await markdown.getPostContent(SerialNumber)
+	var title              = markdown.getTitle(rawMarkdown)
+	var tags               = markdown.getTags(rawMarkdown)
+	var mdContent          = md.render(rawMarkdown)
 	temp_json["mdContent"] = mdContent
+	temp_json["postTitle"] = title
+	temp_json["tags"]      = tags
 	// Preserve for future change
 	return temp_json
 }

@@ -5,7 +5,6 @@
 
 // Library
 var model = require("../model/model")
-const { json } = require("body-parser")
 
 // ======================================
 
@@ -23,6 +22,5 @@ exports.index = function (req, res) {
 // Description: Rendered Post content page
 exports.postView = async function (req, res, SerialNumber) {
 	var json = await model.post_view_data(SerialNumber)
-	console.log(json)
 	return res.render("./postView.ejs", json)
 }
