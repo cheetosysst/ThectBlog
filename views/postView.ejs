@@ -14,14 +14,14 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
 	<!-- Custom JS -->
 
-	<title><%= title %></title>
+	<title><%= locals.title %></title>
 </head>
 
 <body>
 	<div class="fixed-top">
 		<div class="d-flex pre-nav"></div>
 		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand nav-brand-animation" href="../"><%= (title) %></a>
+			<a class="navbar-brand nav-brand-animation" href="../"><%= locals.title %></a>
 			<button class="navbar-toggler remove-the-ugly-and-useless-outline" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
@@ -95,10 +95,10 @@
 					<div class="col-md">
 						<div class="card-block py-4 px-4">
 							<h4 class="card-title">
-								<%= locals.idName %> <%= realName %>
+								<%= locals.idName %> <%= locals.realName %>
 							</h4>
 							<p class="card-text">
-								<%= selfDescription %>
+								<%= locals.selfDescription %>
 							</p>
 						</div>
 					</div>

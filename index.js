@@ -9,6 +9,7 @@ var Controller = require('./controller/controller.js')
 
 // Variable
 var app        = express();
+app.set('view engine', 'ejs')
 
 // ======================================
 

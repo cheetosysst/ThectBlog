@@ -21,7 +21,8 @@ exports.getPostContent = function (SerialNumber) {
 			if (err) {
 				reject(console.log("Reject fs.readFile()", err))
 			} else {
-				resolve(console.log("data in fs.readFile()", data))
+				console.log("data in fs.readFile()", data)
+				resolve(data)
 			}
 		})
 	})

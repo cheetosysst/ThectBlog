@@ -28,7 +28,7 @@ exports.index_data =  {
 // Funtion    : post_view_data(SerialNumber)
 // Return type: JSON
 // Description: Post content related JSON
-exports.post_view_data = (SerialNumber) => {
+exports.post_view_data = async (SerialNumber) => {
 	var temp_json = index_data
 	// Preserve for future change
 	return temp_json
