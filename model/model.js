@@ -15,15 +15,6 @@ exports.index_data =  {
 
 exports.post_view_data = (SerialNumber) => {
 	var temp_json = index_data
-	var mdContent = ""
-	md.getPostContent(SerialNumber).then((data)=>{
-		var temp = data.toString("utf8")
-		console.log(temp)
-		mdContent = temp
-		while(true) {
-			if (mdContent !== "") break
-		}
-	})
-	temp_json["mdContent"] = mdContent
+	// Preserve for future change
 	return temp_json
 }
