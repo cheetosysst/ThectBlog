@@ -1,17 +1,19 @@
-const markdown = require('markdown-it')()
+// File       : ./model/markdown.js
+// Description: Read and return markdown content
+
+// ======================================
+
+// Library
 const fs = require('fs')
-const md = require('markdown-it')()
 const path = require("path")
-const util = require('util');
-const { resolve } = require('path');
-const { rejects } = require('assert');
 
-const readFile = util.promisify(fs.readFile);
+// ======================================
 
-function getFile(path) {
-	return readFile(path);
-}
+// Exports 
 
+// Function   : getPostContent(SerialNumber):
+// Return type: Promise()
+// Description: Return markdown content in a promise object.
 exports.getPostContent = function (SerialNumber) {
 	return new Promise((resolve, reject)=> {
 		var pathMD = path.join("./model/posts/", SerialNumber+".md")
@@ -24,6 +26,3 @@ exports.getPostContent = function (SerialNumber) {
 		})
 	})
 }
-// var rawMD  = await getFile(pathMD)
-
-// return rawMD
