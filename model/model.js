@@ -5,7 +5,8 @@
 
 // Library
 var index_data = require("./json/index.json")
-var md = require("./markdown")
+var markdown = require("./markdown")
+var md = require('markdown-it')();
 
 // ======================================
 
@@ -30,6 +31,9 @@ exports.index_data =  {
 // Description: Post content related JSON
 exports.post_view_data = async (SerialNumber) => {
 	var temp_json = index_data
+	var rawMarkdown = await markdown.getPostContent(SerialNumber)
+	var mdContent = md.render(rawMarkdown)
+	temp_json["mdContent"] = mdContent
 	// Preserve for future change
 	return temp_json
 }
