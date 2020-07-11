@@ -7,6 +7,7 @@
 var index_data = require("./json/index.json")
 var markdown = require("./markdown")
 var md = require('markdown-it')();
+require('dotenv').config() // Get configs
 
 // ======================================
 
