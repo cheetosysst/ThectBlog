@@ -24,13 +24,13 @@ app.use(function(req, res, next) {
 	next()
 })
 
+// Static file requests (css, js, image, etc)
+app.use('/static', express.static('public'));
+
 // All non-static connection
 app.use(function(req, res, next) {
 	Controller(req, res, next)
 })
-
-// Static file requests (css, js, image, etc)
-app.use('/static', express.static('public'));
 
 // ======================================
 
