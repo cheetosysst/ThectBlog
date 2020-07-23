@@ -5,8 +5,9 @@
 
 // Library
 var express = require("express")
-var app     = express()
-var view    = require("../views/view.js")
+var app = express()
+var router = express.Router()
+var view = require("../views/view.js")
 
 var indexController = require("./index.controller")
 var githubController = require("./github.controller")
@@ -15,6 +16,7 @@ var tagController = require("./tag.controller")
 var searchController = require("./search.controller")
 var aboutController = require("./about.controller")
 var faqController = require("./faq.controller")
+var errorController = require("./error.controller")
 
 app.set('view engine', 'ejs')
 require('dotenv').config() // Get configs
@@ -22,31 +24,38 @@ require('dotenv').config() // Get configs
 // ======================================
 
 // Routes
-// Redirect: Redirect user to other site
-app.use('/github', function (req, res) { githubController.controller(req, res)})
-
-// Post: List all posts, sort by time
-app.get('/post', function (req, res) { postController.controller(req, res, null)})
-app.get('/post/:SerialNumber', function (req, res) { postController.controller(req, res, req.params.SerialNumber)})
-
-// Tags: list all posts with a certain tag
-app.get('/tag', function (req, res) { tagController.controller(req, res, null)})
-app.get('/tag/:tag', function (req, res) { tagController.controller(req, res, req.params.tag)})
-
-// Search: Search posts
-app.get('/search', function (req, res) { searchController.controller(req, res, null)})
-app.get('/search/:search', function (req, res) { searchController.controller(req, res, req.params.search)})
-
-// About: Display owner's contact info and description
-app.get('/about', function (req, res) { aboutController.controller(req, res)})
-
-// FAQ: FAQ page
-app.get('/FAQ', function (req, res) { faqController.controller(req, res)})
 
 // Homepage: Display owner description and latest posts
-app.use('/', function (req, res) { indexController.controller(req, res)})
+router.get('/', (req, res) => { indexController.controller(req, res)})
+
+// Post: List all posts, sort by time
+router.use('/post/:SerialNumber', (req, res) => { postController.controller(req, res, req.params.SerialNumber)})
+router.use('/post', (req, res) => { postController.controller(req, res, null)})
+
+// Redirect: Redirect user to other site
+router.use('/github', (req, res) => { githubController.controller(req, res)})
+
+// Tags: list all posts with a certain tag
+router.use('/tag/:tag', (req, res) => { tagController.controller(req, res, req.params.tag)})
+router.use('/tag', (req, res) => { tagController.controller(req, res, null)})
+
+// Search: Search posts
+router.get('/search/:search', (req, res) => { searchController.controller(req, res, req.params.search)})
+router.get('/search', (req, res) => { searchController.controller(req, res, null)})
+
+// About: Display owner's contact info and description
+router.get('/about', (req, res) => { aboutController.controller(req, res)})
+
+// FAQ: FAQ page
+router.get('/FAQ', (req, res) => { faqController.controller(req, res)})
+router.get('/security.txt', (req, res) => {
+	res.send("placeholder")
+})
+
+// 404
+router.use((req, res) => { errorController.controller(req, res)})
 
 // ======================================
 
 // Export
-module.exports = app
+module.exports = router
