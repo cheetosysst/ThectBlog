@@ -1,11 +1,10 @@
-// File       : ./model/markdown.js
+// File       : ./library/markdown.js
 // Description: Read and return markdown content
 
 // ======================================
 
 // Library
-const fs   = require('fs')
-const path = require("path")
+var md = require('markdown-it')();
 require('dotenv').config() // Get configs
 
 // ======================================
@@ -15,17 +14,11 @@ require('dotenv').config() // Get configs
 // Function   : getPostContent(SerialNumber):
 // Return type: Promise()
 // Description: Return markdown content in a promise object.
-exports.getPostContent = function (SerialNumber) {
-	if (global.DEBUG) console.log("[DEBUG] ./model/markdwon.js getPostContent()")
+exports.parseMarkdown = (raw) => {
+	if (global.DEBUG) console.log("[DEBUG] ./model/markdwon.js parseMarkdown()")
 	return new Promise((resolve, reject)=> {
-		var pathMD = path.join("./model/posts/", SerialNumber+".md")
-		fs.readFile(pathMD, 'utf-8', (err, data) => {
-			if (err) {
-				reject(console.log("Reject fs.readFile()", err))
-			} else {
-				resolve(data)
-			}
-		})
+		var data = md.render(raw)
+		resolve(data)
 	})
 }
 
