@@ -5,7 +5,23 @@
 
 // Library
 var model = require("../model/model")
+var path = require("path")
+var ejs = require("ejs")
+var fs = require("fs")
 require('dotenv').config() // Get configs
+
+// ======================================
+
+function renderLayout(req, res, page) {
+	fs.readFile(path.join(__dirname, page + ".ejs"), "utf8", (err,data) => {
+		var html = ejs.render(data)
+		renderLayout(req, res, html)
+	})
+}
+
+function renderContent(req, res, html) {
+	res.render(html, model.index_data)
+}
 
 // ======================================
 
@@ -26,4 +42,8 @@ exports.postView = async function (req, res, SerialNumber) {
 	if (global.DEBUG) console.log("[DEBUG] ./views/view.js exports.postView")
 	var json = await model.post_view_data(SerialNumber)
 	return res.render("./postView.ejs", json)
+}
+
+exports.render = async (req, res, page) => {
+	renderLayout(req, res, page)
 }
