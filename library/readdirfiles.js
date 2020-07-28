@@ -2,12 +2,6 @@
 var path = require("path")
 var fs = require("fs")
 var fsPromise = require("fs/promises")
-const {
-	resolve
-} = require("path")
-const {
-	rejects
-} = require("assert")
 
 exports.readDirs = async (dir, allFiles = []) => {
 	const files = (await fsPromise.readdir(dir)).map(f => path.join(dir, f))
