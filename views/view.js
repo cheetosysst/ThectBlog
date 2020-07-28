@@ -15,14 +15,16 @@ require('dotenv').config() // Get configs
 
 function renderLayout(req, res, page) {
 	fs.readFile(path.join(__dirname, page + ".ejs"), "utf8", async (err,data) => {
+		if (err) throw err
 		var components = await readComponents.readFiles(path.join(__dirname, "components"))
 		var html = ejs.render(data, components)
-		renderLayout(req, res, html)
+		renderContent(req, res, html)
 	})
 }
 
 function renderContent(req, res, html) {
-	res.render(html, model.index_data)
+	var page = ejs.render(html, model.index_data)
+	res.send(page)
 }
 
 // ======================================

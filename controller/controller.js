@@ -17,6 +17,7 @@ var searchController = require("./search.controller")
 var aboutController = require("./about.controller")
 var faqController = require("./faq.controller")
 var errorController = require("./error.controller")
+var testController = require("./test.controller")
 
 app.set('view engine', 'ejs')
 require('dotenv').config() // Get configs
@@ -45,6 +46,9 @@ router.get('/search', (req, res) => { searchController.controller(req, res, null
 
 // About: Display owner's contact info and description
 router.get('/about', (req, res) => { aboutController.controller(req, res)})
+
+// Test: For testing purpose
+router.get("/test", (req, res) => { testController.controller(req, res)})
 
 // FAQ: FAQ page
 router.get('/FAQ', (req, res) => { faqController.controller(req, res)})

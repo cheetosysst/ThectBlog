@@ -6,7 +6,7 @@ var readdirfiles = require("../library/readdirfiles")
 
 
 async function test() {
-	let data = await readdirfiles.readFiles(path.join(__dirname, "../controller"))
+	let data = await readdirfiles.readFiles(path.join(__dirname, "../views/components"))
 	console.log(data)
 }
 
