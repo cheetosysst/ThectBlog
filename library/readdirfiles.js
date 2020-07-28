@@ -1,9 +1,13 @@
-
-
 // var fs = require('fs')
 var path = require("path")
 var fs = require("fs")
 var fsPromise = require("fs/promises")
+const {
+	resolve
+} = require("path")
+const {
+	rejects
+} = require("assert")
 
 exports.readDirs = async (dir, allFiles = []) => {
 	const files = (await fsPromise.readdir(dir)).map(f => path.join(dir, f))
@@ -17,11 +21,12 @@ exports.readDirs = async (dir, allFiles = []) => {
 exports.readFiles = async (dir) => {
 	const files = await this.readDirs(dir)
 	var json = {}
-	console.log(files)
-	files.forEach(async (file) => {
-		var filename = file.basename
-		fsPromise.readFile(file)
-		console.log(json)
-	})
+	for (let i = 0; i < files.length; i++) {
+		var filename = path.basename(files[i])
+		json[filename.split(".")[0]] = await fsPromise.readFile(files[i], "utf8")
+	}
+
+	Object.values(json)
+	return json
 }
 // Promise.all(list.map(item => item.data.then(data => ({...item, data}))))
