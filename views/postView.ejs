@@ -11,96 +11,31 @@
 		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 	<!-- Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/card.css">
 	<!-- Custom JS -->
 
-	<title><%= locals.postTitle %></title>
+	<title><%= (typeof title != "undefined" ? title : "") %></title>
 </head>
 
 <body>
-	<div class="fixed-top">
-		<div class="d-flex pre-nav"></div>
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand nav-brand-animation" href="../"><%= locals.title %></a>
-			<button class="navbar-toggler remove-the-ugly-and-useless-outline" type="button" data-toggle="collapse"
-				data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+	<%- navbar %> 
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							文章
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="../post">所有文章</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="../tags/tutorial">教學</a>
-							<a class="dropdown-item" href="../tags/note">筆記</a>
-							<a class="dropdown-item" href="../tags/translation">翻譯</a>
-							<a class="dropdown-item" href="../tags/science">科普</a>
-							<a class="dropdown-item" href="../tags/life">日常</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">標籤檢索</a>
-						</div>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="../about"><strong>關於</strong></a>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="../github"><strong>Github</strong></a>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="../FAQ"><strong>FAQ</strong></a>
-					</li>
-				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<div class="input-group">
-						<div class="search-effect-3 search-effect-4">
-							<input class="form-control remove-the-ugly-and-useless-outline " type="text"
-								placeholder="搜尋文章" aria-label="Search">
-						</div>
-					</div>
-				</form>
-			</div>
-		</nav>
-	</div>
+	<div class="mb-5"></div>
+
 
 	<div class="container mt-5 pt-5">
 		<div class="card post-content no-animation border-0">
 			<div class="card-block py-4 px-4">
 				<p class="card-text">
-					<%- locals.mdContent %> 
 				</p>
 			</div>
 		</div>
 	</div>
 
 	<!-- Self description -->
-	<div class="container mt-3">
-		<div class="card self-intro border-0">
-			<a href="./about">
-				<div class="row no-gutters">
-					<div class="col-auto">
-						<img src="../static/src/Thect.jpg" class="align-middle self-photo " alt="">
-					</div>
-					<div class="col-md">
-						<div class="card-block py-4 px-4">
-							<h4 class="card-title">
-								<%= locals.idName %> <%= locals.realName %>
-							</h4>
-							<p class="card-text">
-								<%= locals.selfDescription %>
-							</p>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
+	<%- about %> 
 
 	
 

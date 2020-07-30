@@ -13,7 +13,7 @@ function postList(req, res) {
 }
 
 function postView(req, res, SerialNumber) {
-	view.postView(req, res, SerialNumber)
+	view.render(req, res, "postView")
 }
 
 // ======================================
