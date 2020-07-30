@@ -1,0 +1,9 @@
+body {
+	font-family: Microsoft JhengHei !important;
+	background-color: #222629;
+}
+
+.remove-the-ugly-and-useless-outline:focus {
+	outline: none !important;
+	box-shadow: none;
+}
