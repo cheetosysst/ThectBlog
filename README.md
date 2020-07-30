@@ -1,7 +1,13 @@
 # ThectBlog
+[![](https://img.shields.io/github/license/cheetosysst/thectBlog?style=flat-square)]()
 [![](https://img.shields.io/david/dev/cheetosysst/thectBlog?style=flat-square)]()
 [![](https://img.shields.io/scrutinizer/quality/g/cheetosysst/thectBlog?style=flat-square)]()
 [![](https://img.shields.io/codacy/grade/bbe55dd4142444ceb37e054215cecf09?style=flat-square)]()
+[![](https://img.shields.io/github/issues/cheetosysst/thectBlog?style=flat-square)]()
+[![](https://img.shields.io/github/issues-pr/cheetosysst/thectBlog?style=flat-square)]()
+[![](https://img.shields.io/github/repo-size/cheetosysst/thectBlog?style=flat-square)]()
+[![](https://img.shields.io/github/v/release/cheetosysst/thectBlog?style=flat-square)]()
+[![](https://img.shields.io/github/downloads/cheetosysst/thectBlog/total?style=flat-square)]()
 
 *** Warining! ***: 我正在重寫，很多檔案會消失。我現在要把檔案重新切個得清楚一點，未來要大改很多流程。  
 
