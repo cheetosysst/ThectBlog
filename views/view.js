@@ -14,7 +14,7 @@ require('dotenv').config() // Get configs
 // ======================================
 
 function renderLayout(req, res, page) {
-	fs.readFile(path.join(__dirname, page + ".ejs"), "utf8", async (err,data) => {
+	fs.readFile(path.join(__dirname, "pages", page + ".ejs"), "utf8", async (err,data) => {
 		if (err) throw err
 		var components = await readComponents.readFiles(path.join(__dirname, "components"))
 		var html = ejs.render(data, components)

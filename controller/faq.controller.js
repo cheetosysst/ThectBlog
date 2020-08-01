@@ -12,6 +12,5 @@ require('dotenv').config() // Get configs
 
 exports.controller = (req, res) => {
 	if (global.DEBUG) console.log("[DEBUG] ./controller/faq.controller.js faq route")
-	res.write("FAQ placeholder")
-	res.end()
+	view.render(req, res, "faq")
 }
