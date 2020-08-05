@@ -45,7 +45,7 @@ router.use('/example', (req, res) => { exampleController.controller(req, res)})
 ### 視圖 View
 View 負責 render 頁面，當 controller 接收到請求，並向 View 要求 render 頁面時，View 會向 model 取得必要資訊 (部落格名稱、擁有者、... 等等) 以及各個模塊。第一次 render 時，View 會讀取該頁面模板，在當中插入模塊。第二次 render 時插入必要資訊，並回傳到 controller。
 
-### 模型
+### 模型 Model
 
 #### 資料庫 Database
 目前規劃，在 Model 中會加入一個 `database.model.js` 負責作為和所有資料庫溝通，不管使用者選擇使用的資料庫為何，都會盡可能的使用相同的幾個 function。
